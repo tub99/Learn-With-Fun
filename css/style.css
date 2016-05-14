@@ -50,3 +50,27 @@
 	  		font-family: cursive;
 	  		font-size: 50px;
 	  	}
+	  td{
+	  		width: 150px;
+	  	}
+	  	#submit{
+	  		height: 50px;
+	  		width: 75px;
+	  		font-size: 15px;
+	  		font-weight: bold;
+	  	}
+	  	#hint{
+	  		font-size: 15px;
+			border-radius: 15px;
+			height: 30px;
+	  		font-weight : bold;
+	  		font-family: cursive;
+	  		background-color : #cc3300;
+	  		color:white;
+
+	  	}
+	  	#hintLabel{
+	  		font-size: 20px;
+			font-family : cursive;
+			color : #800000;
+	  	}

@@ -48,14 +48,12 @@ function Template(data){
 			kbObject.addkeyPad(keyPadHolder,kTypeArr,actionArr,targetField,null,0,0);
 			//generate hint if any
 			if(sourceData[index].hint!=="" && sourceData[index].hint!==undefined){
-				var r= $('<input type="button" value="hint" id="hint"/>').css({'font-size':'15px','border-radius': '5px'});
+				var r= $('<input type="button" value="HINT" id="hint"/>');
 				$(mainTemplate.toString()).append(r);
 				$("#hint").on('click',function(){
-					var label='<label for="ans" id="hintLabel"></label>';
+					var label='&nbsp;&nbsp;<label for="ans" id="hintLabel"></label>';
 					$(mainTemplate.toString()).append(label);
-					$("#hintLabel").text(sourceData[index].hint).css({
-						'font-size':'15px'
-					});
+					$("#hintLabel").text(sourceData[index].hint);
 				
 				});
 			}

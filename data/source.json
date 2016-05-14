@@ -18,7 +18,7 @@
 		"size" : "",
 		"question" : "Which animal am I?",
 		"answer" : "dog",
-		"hint" : "  This animal barks. bhow! bhow!"
+		"hint" : "  This animal barks. Bhow! Bhow!"
 	},
 	{
 		"path":"http://localhost/TemplateLibrary/resources/flower.PNG",
@@ -39,12 +39,12 @@
 		"size" : "",
 		"question" : "Which fruit is this?",
 		"answer" : "mango",
-		"hint" : "  I am the king of fruits. You can find me during Summer!"
+		"hint" : "  I am the king of fruits."
 	},
 	{
 		"path":"http://localhost/TemplateLibrary/resources/football.PNG",
 		"size" : "",
-		"question" : "Which game do you play with me?",
+		"question" : "Which sport do you play with me?",
 		"answer" : "football",
 		"hint" : "  In this game you play with your feet!"
 	},

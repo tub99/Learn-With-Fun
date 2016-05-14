@@ -43,10 +43,10 @@ function ScoreMeter(width,height,scoreTemplate,questionFlag,timeFlag,smartScoreF
 		var scoreTemp=$(scoreTemplate);
 
 		scoreTemp.append(
-			'<table id="scoreTable" border="3" ></table>'
+			'<table class="table" id="scoreTable" border="3px"></table>'
 		);
 		var scoretable=$('#scoreTable');
-		scoretable.append('<tr><td id="row1"></td></tr> <tr><td id="row2"></td></tr> <tr><td id="row3"></td></tr> <tr><td id="row4"></td></tr> <tr><td></td></tr> <tr><td id="row5"></td></tr> <tr><td id="row6"></td></tr>');
+		scoretable.append('<tr><td id="row1"></td></tr> <tr><td id="row2"></td></tr> <tr><td id="row3"></td></tr> <tr><td id="row4"></td></tr> <tr><td id="row5"></td></tr> <tr><td id="row6"></td></tr>');
 		var qAnswered='<div id="qAns">Correctly Answered</div>';
 		$('#row1').append(qAnswered).css(
 			{
