@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	 
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="css/bootstrap.min.css">
+	  <script src="library/jquery.min.js"></script>
+	  <script src="library/bootstrap.min.js"></script>
+	   <script src="library/sweetalert.min.js"></script>
+  		<link rel="stylesheet" href="css/sweetalert.min.css">
+
+	  <script type="text/javascript" src="js/template/Template.js"></script>
+	  <script type="text/javascript" src="js/template/ScoreMeter.js"></script>
+	  <script type="text/javascript" src="js/dataHandler/DataHandler.js"></script>
+	  <script type="text/javascript" src="js/keypad/MyKeyBoard.js"></script>
+	  <script type="text/javascript" src="js/keypad/KeyType.js"></script>
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	  <style type="text/css">
+	  	 body{
+	  	background-image: url(resources/treehouse.png);
+	  }
+	  </style>
+	</head>
+	<h1 align="center">Learn With Fun</h1><br><br>
+	<body>
+		<div id="fullTemplate" align="center">
+			<div id="template" class="container">
+
+				<div class="container" id="imgDiv"></div>
+				<img src="resources/prev1.png"id="prev"></img>
+				<img src="resources/next1.png"id="next"></img>
+				<br><br><br>
+				
+						<div class='container col-xs-4'>
+					  		<h3><label for="ans" id="question">Enter your Answer</label></h3>
+					  		<input class="form-control" id="answer" type="text"><br>
+					  	
+					  		<div id='keypadHolder'>
+					  		</div>
+					  		<br>
+					  		<button type="button" class="btn btn-success btn-lg" id="check">Check</button><br><br>
+					  	</div>
+
+					
+			</div>
+			<div id="scoremeter"></div>
+		</div>
+		
+		<script type="text/javascript">
+		
+			$(document).ready(function() {
+				
+								
+			   	var questionAnswered=0,
+			   		item,template,index=0,rnd,score=0,
+			   		parsedData,
+			   		dataHandler = new DataHandler();
+			   		
+			   	
+			 
+			   
+
+			    $.getJSON('data/source.json', function(data) {
+			    	var	scoreMeter = new ScoreMeter(100,300,'#scoremeter');
+			    	scoreMeter.startTimer();
+			   		scoreMeter.createScoreMeter(0);
+
+			   		
+					parsedData=dataHandler.parseData(data);
+					item = dataHandler.shuffle(parsedData);
+					console.log(item);
+					// console.log(item);
+					 template= new Template(item);
+					 console.log("Length"+item.length);
+					 
+			   	
+
+
+					 template.generateTemplate("#template","#imgDiv","#question","#answer","#check",index);
+
+					$('#prev').hide();
+
+					 $('#next').on('click',function(){
+					 	if(index>=0 && index<item.length-1){
+					     	index++;
+					     	if(index=== item.length-1)
+					     		$('#next').hide();
+					     	$('#prev').show();
+					     	console.log("Next"+index);
+					     	template.generateTemplate("#template","#imgDiv","#question","#answer","#check",index);
+					     scoreMeter.startTimer();
+					     }
+					 });
+
+					 
+					$('#prev').on('click',function(){
+						if(index>0){
+					     	index--;
+					     	$('#next').show();
+					     	if(index===0)
+					     		$('#prev').hide();
+					     	console.log("Prev"+index);
+					     	template.generateTemplate("#template","#imgDiv","#question","#answer","#check",index);
+					     	scoreMeter.startTimer();
+					     }
+						});
+
+					 $('#check').on('click',function(){
+						answer=$("#answer").val().trim().toLowerCase();
+						if(answer == item[index].answer.toString().toLowerCase()){
+							if(item[index].ansFlag===false) {
+								qMarks = item[index].marks || 10;
+								score+=qMarks;
+								item[index].ansFlag=true;
+								questionAnswered++;
+								swal("Awesome Job", "You are absolutely correct!", "success");
+								//var	score = new ScoreMeter(100,300,'#scoremeter');
+			   					scoreMeter.updateScoreMeter(questionAnswered,score,0);
+			   					var timeTaken= scoreMeter.getTimeToAnswer();
+			   					item[index].timeTakenToAnswer=timeTaken;
+			   					
+							}
+							else
+								swal("Good Job", "You have already answered this!", "success");
+						}
+						else
+							swal("Oops!", "You are wrong!", "error");
+							template.generateTemplate("#template","#imgDiv","#question","#answer","#check",index);
+						
+						//$('#answer').val("");
+					
+					});
+
+			     });
+			});
+
+		</script>
+
+	</body>
+<html>

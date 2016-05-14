@@ -1,0 +1,52 @@
+
+		  #question{
+		  	font-size: 30px;
+		  	font-family: cursive;
+		  	 color: #001a00;
+
+		  }
+	  	 #answer{
+	  		font-size: 20px;
+	  		font-family : cursive;
+	  		color: #1a1a00;
+	  	}
+	
+	  	#template{
+			float: center;
+    		text-align: center;
+			float: left;
+	    	text-align: left;
+	    	width:700px;
+	
+	  	
+	  	}
+	  	#scoremeter{
+	  		float: right;
+    		text-align: center;
+	  	}
+ 		.key{
+ 			background-color:#b3e6b3;
+		    border-radius: 10px;
+		    font-size: 20px;
+		     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	  	}
+	  	.key:hover{
+	  		background-color: #555555;
+    		color: white;
+	  	}
+
+	  	#next{
+	  		float: right;
+	  		margin-right: 300px;
+	  	}
+	  	#check{
+	  		background-color: #666600;
+	  	}
+	  	#fullTemplate{
+	  		margin: 0 auto;
+	  		width: 1000px;
+	  	}
+	  	h1{
+	  		font-family: cursive;
+	  		font-size: 50px;
+	  	}

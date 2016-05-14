@@ -1,0 +1,36 @@
+<head>
+	<script type="text/javascript" src="js/MyKeyBoard.js"></script>
+	<script type="text/javascript" src="js/KeyType.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+</head>
+<body>
+	 <div class="form-group">
+	 	<div class="col-xs-10">
+       		<input class="form-control input-lg" id="target" type="text">
+   		</div>
+    </div>
+	<br><br><br>
+	<div id="keyboard" align="left"></div>
+		<script type="text/javascript">
+			var keyPadHolder=document.getElementById("keyboard"),
+				targetField=document.getElementById("target"),
+				kbObject=new MyKeyBoard(),
+				keyType=new KeyType(),
+				actionArr=[keyType.getAction().btCapital, keyType.getAction().btSmall,keyType.getAction().btSpace,keyType.getAction().btSearch,keyType.getAction().btBackSpace,keyType.getAction().btYes,keyType.getAction().btNo,],
+				kTypeArr=[[keyType.getAlphabets().alp1],[keyType.getAlphabets().alp2],[keyType.getAlphabets().alp3],[keyType.getNumerics()],[keyType.getSymbols()],[keyType.getMath()]];
+
+
+			kbObject.addkeyPad(keyPadHolder,kTypeArr,actionArr,targetField,null,0,0);
+			console.log(keyType.getNumerics());
+			  $(function() {
+			    $( "#keyboard" ).draggable();
+			  });
+
+		</script>
+</body>

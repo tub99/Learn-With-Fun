@@ -1,0 +1,58 @@
+[
+	{
+		"path":"http://localhost/TemplateLibrary/resources/apple.PNG",
+		"size" : "",
+		"question" : "Name this fruit",
+		"answer" : "apple",
+		"hint" : "  An _______ a day keeps the doctor away!"
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/balloons.PNG",
+		"size" : "",
+		"question" : "How many ballons are there?",
+		"answer" : 3,
+		"hint" : ""
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/dog.PNG",
+		"size" : "",
+		"question" : "Which animal am I?",
+		"answer" : "dog",
+		"hint" : "  This animal barks. bhow! bhow!"
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/flower.PNG",
+		"size" : "",
+		"question" : "How many flowers are there?",
+		"answer" : 5 ,
+		"hint" : ""
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/rose.PNG",
+		"size" : "",
+		"question" : "What is my name?",
+		"answer" : "rose",
+		"hint" : "  I have a very sweet smell."
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/mango.PNG",
+		"size" : "",
+		"question" : "Which fruit is this?",
+		"answer" : "mango",
+		"hint" : "  I am the king of fruits. You can find me during Summer!"
+	},
+	{
+		"path":"http://localhost/TemplateLibrary/resources/football.PNG",
+		"size" : "",
+		"question" : "Which game do you play with me?",
+		"answer" : "football",
+		"hint" : "  In this game you play with your feet!"
+	},
+		{
+		"path":"http://localhost/TemplateLibrary/resources/pumpkin.PNG",
+		"size" : "",
+		"question" : " Which vegetable am I?",
+		"answer" : "pumpkin",
+		"hint" : ""
+	}
+]
